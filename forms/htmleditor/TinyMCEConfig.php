@@ -3,7 +3,7 @@
 /**
  * Default configuration for HtmlEditor specific to tinymce
  */
-class TinyMCEConfig extends HtmlEditorConfig {
+class TinyMCEConfig extends HTMLEditorConfig {
 
 	/**
 	 * Location of module relative to BASE_DIR. This must contain the following dirs

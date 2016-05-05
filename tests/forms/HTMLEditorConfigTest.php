@@ -3,7 +3,7 @@
  * @package framework
  * @subpackage tests
  */
-class HtmlEditorConfigTest extends SapphireTest {
+class HTMLEditorConfigTest extends SapphireTest {
 
 	public function testEnablePluginsByString() {
 		$c = new TinyMCEConfig();
@@ -122,8 +122,8 @@ class HtmlEditorConfigTest extends SapphireTest {
 	}
 
 	public function testRequireJSIncludesAllConfigs() {
-		$a = HtmlEditorConfig::get('configA');
-		$c = HtmlEditorConfig::get('configB');
+		$a = HTMLEditorConfig::get('configA');
+		$c = HTMLEditorConfig::get('configB');
 
 		$aAttributes = $a->getAttributes();
 		$cAttributes = $c->getAttributes();

@@ -17,7 +17,7 @@ class HtmlEditorField extends TextareaField {
 	private static $use_gzip = true;
 
 	/**
-	 * Should we check the valid_elements (& extended_valid_elements) rules from HtmlEditorConfig server side?
+	 * Should we check the valid_elements (& extended_valid_elements) rules from HTMLEditorConfig server side?
 	 *
 	 * @config
 	 * @var bool
@@ -35,29 +35,29 @@ class HtmlEditorField extends TextareaField {
 	/**
 	 * ID or instance of editorconfig
 	 *
-	 * @var string|HtmlEditorConfig
+	 * @var string|HTMLEditorConfig
 	 */
 	protected $editorConfig = null;
 
 	/**
-	 * Gets the HtmlEditorConfig instance
+	 * Gets the HTMLEditorConfig instance
 	 *
-	 * @return HtmlEditorConfig
+	 * @return HTMLEditorConfig
 	 */
 	public function getEditorConfig() {
 		// Instance override
-		if($this->editorConfig instanceof HtmlEditorConfig) {
+		if($this->editorConfig instanceof HTMLEditorConfig) {
 			return $this->editorConfig;
 		}
 
 		// Get named / active config
-		return HtmlEditorConfig::get($this->editorConfig);
+		return HTMLEditorConfig::get($this->editorConfig);
 	}
 
 	/**
 	 * Assign a new configuration instance or identifier
 	 *
-	 * @param string|HtmlEditorConfig $config
+	 * @param string|HTMLEditorConfig $config
 	 * @return $this
 	 */
 	public function setEditorConfig($config) {
@@ -72,7 +72,7 @@ class HtmlEditorField extends TextareaField {
 	 * @param string $name The internal field name, passed to forms.
 	 * @param string $title The human-readable field label.
 	 * @param mixed $value The value of the field.
-	 * @param string $config HtmlEditorConfig identifier to be used. Default to the active one.
+	 * @param string $config HTMLEditorConfig identifier to be used. Default to the active one.
 	 */
 	public function __construct($name, $title = null, $value = '', $config = null) {
 		parent::__construct($name, $title, $value);
@@ -101,7 +101,7 @@ class HtmlEditorField extends TextareaField {
 		// Sanitise if requested
 		$htmlValue = Injector::inst()->create('HTMLValue', $this->Value());
 		if($this->config()->sanitise_server_side) {
-			$santiser = Injector::inst()->create('HtmlEditorSanitiser', HtmlEditorConfig::get_active());
+			$santiser = Injector::inst()->create('HtmlEditorSanitiser', HTMLEditorConfig::get_active());
 			$santiser->sanitise($htmlValue);
 		}
 

@@ -39,7 +39,7 @@ class HtmlEditorSanitiserTest extends FunctionalTest {
 			)
 		);
 
-		$config = HtmlEditorConfig::get('htmleditorsanitisertest');
+		$config = HTMLEditorConfig::get('htmleditorsanitisertest');
 
 		foreach($tests as $test) {
 			list($validElements, $input, $output, $desc) = $test;
