@@ -440,7 +440,7 @@ class TinyMCEConfig extends HTMLEditorConfig {
 	 */
 	public function getScriptURL() {
 		// If gzip is disabled just return core script url
-		$useGzip = Config::inst()->get('HtmlEditorField', 'use_gzip');
+		$useGzip = Config::inst()->get('HTMLEditorField', 'use_gzip');
 		if(!$useGzip) {
 			return THIRDPARTY_DIR . '/tinymce/tinymce.min.js';
 		}

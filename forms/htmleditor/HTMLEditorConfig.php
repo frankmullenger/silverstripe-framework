@@ -9,8 +9,8 @@
  *
  * - default_config config setting
  * - Active config assigned
- * - Config name assigned to HtmlEditorField
- * - Config instance assigned to HtmlEditorField
+ * - Config name assigned to HTMLEditorField
+ * - Config instance assigned to HTMLEditorField
  *
  * Typically global config changes should set the active config.
  *

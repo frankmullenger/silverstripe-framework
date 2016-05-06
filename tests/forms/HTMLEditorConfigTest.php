@@ -75,14 +75,14 @@ class HTMLEditorConfigTest extends SapphireTest {
 		$this->assertEquals(['plugin4', 'plugin5'], $c->getInternalPlugins());
 
 		// Test plugins included via gzip compresser
-		Config::inst()->update('HtmlEditorField', 'use_gzip', true);
+		Config::inst()->update('HTMLEditorField', 'use_gzip', true);
 		$this->assertEquals(
 			'framework/thirdparty/tinymce/tiny_mce_gzip.php?js=1&plugins=plugin4,plugin5&themes=modern&languages=es&diskcache=true&src=true',
 			$c->getScriptURL()
 		);
 
 		// If gzip is disabled only the core plugin is loaded
-		Config::inst()->remove('HtmlEditorField', 'use_gzip');
+		Config::inst()->remove('HTMLEditorField', 'use_gzip');
 		$this->assertEquals(
 			'framework/thirdparty/tinymce/tinymce.min.js',
 			$c->getScriptURL()

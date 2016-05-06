@@ -1564,7 +1564,7 @@ class LeftAndMain extends Controller implements PermissionProvider {
 	 * Return the CMS's HTML-editor toolbar
 	 */
 	public function EditorToolbar() {
-		return HtmlEditorField_Toolbar::create($this, "EditorToolbar");
+		return HTMLEditorField_Toolbar::create($this, "EditorToolbar");
 	}
 
 	/**
