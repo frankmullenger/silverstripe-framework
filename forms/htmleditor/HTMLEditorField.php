@@ -101,7 +101,7 @@ class HTMLEditorField extends TextareaField {
 		// Sanitise if requested
 		$htmlValue = Injector::inst()->create('HTMLValue', $this->Value());
 		if($this->config()->sanitise_server_side) {
-			$santiser = Injector::inst()->create('HtmlEditorSanitiser', HTMLEditorConfig::get_active());
+			$santiser = Injector::inst()->create('HTMLEditorSanitiser', HTMLEditorConfig::get_active());
 			$santiser->sanitise($htmlValue);
 		}
 

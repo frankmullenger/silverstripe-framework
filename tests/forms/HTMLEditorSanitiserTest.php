@@ -3,7 +3,7 @@
  * @package framework
  * @subpackage tests
  */
-class HtmlEditorSanitiserTest extends FunctionalTest {
+class HTMLEditorSanitiserTest extends FunctionalTest {
 
 	public function testSanitisation() {
 		$tests = array(
