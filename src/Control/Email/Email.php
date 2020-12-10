@@ -2,6 +2,8 @@
 
 namespace SilverStripe\Control\Email;
 
+use Egulias\EmailValidator\EmailValidator;
+use Egulias\EmailValidator\Validation\RFCValidation;
 use SilverStripe\Control\Director;
 use SilverStripe\Control\HTTP;
 use SilverStripe\Core\Convert;
@@ -99,7 +101,8 @@ class Email extends ViewableData
      */
     public static function is_valid_address($address)
     {
-        return \Swift_Validate::email($address);
+        $validator = new EmailValidator();
+        return $validator->isValid($address, new RFCValidation());
     }
 
     /**
@@ -269,7 +272,7 @@ class Email extends ViewableData
      */
     public function setSwiftMessage($swiftMessage)
     {
-        $swiftMessage->setDate(DBDatetime::now()->getTimestamp());
+        $swiftMessage->setDate(new \DateTime());
         if (!$swiftMessage->getFrom() && ($defaultFrom = $this->config()->get('admin_email'))) {
             $swiftMessage->setFrom($defaultFrom);
         }
